@@ -24,7 +24,7 @@ for (let i = 0; i < data.length; i++) {
     card.append(cardImg);
 
   const cardStatsUl = document.createElement("ul");
-  cardStatsUl.classList = "card--text";
+  cardStatsUl.className = "card--text";
   card.append(cardStatsUl);
 
   for(let e = 0; e < currentPokemon.stats.length; e++) {
@@ -32,12 +32,61 @@ for (let i = 0; i < data.length; i++) {
     console.log(currentPokemon.stats[e])
     liHp.innerText = currentPokemon.stats[e].stat.name.toUpperCase() + ": " + String(currentPokemon.stats[e].base_stat);
     cardStatsUl.append(liHp);
-  
   }
-  /*
+
+  const pokemonGames = document.createElement("li")
+  //pokemonGames.innerText = "Games"
+  cardStatsUl.append(pokemonGames)
+
+  let gameList = currentPokemon.game_indices
+  let gameListText = ''
+  gameList.forEach(gameInfo => {
+    console.log(gameInfo)
+    //gameListText.length 
+    gameListText += gameInfo.version.name + ', '
+  })
+
+  pokemonGames.innerText = 'APPEARS IN: ' + gameListText
+
+  // const gameList = document.createElement('li')
+  // gameList.innerText = 
+
+  // let gameList = data.game_indices[i];
+  
+  // gameList.forEach()
+
+
+  // const gameList = docuemt.createElement('li')
+  // gameList.innerText = currentPokemon.game_indices[x].game_index.name.toUpperCase() + ": " + String(currentPokemon.game_indices[x].game_index);
+  // cardStatsUl.append(gameList)
+
+  // let pokemonGames = data.game_indices[i]
+
+  // pokemonGames.forEach(game_index => {
+  //     pokemonGames.push(game_index)
+  //   });
+
+
+  // for(let x = 0; x < currentPokemon.game_indices.length; x++) {
+  //   const pokemonGames = document.createElement("li");
+  //   console.log(currentPokemon.game_indices[x])
+  //   pokemonGames.innerText = currentPokemon.game_indices[x].game_index.name.toUpperCase() + ": " + String(currentPokemon.game_indices[x].game_index);
+  //   cardStatsUl.append(pokemonGames);
+  // }
+
+  // const pokemonGames = document.createElement('li');
+  // pokemonGames.className = "card--text";
+  
+
+}
+
+console.log(data[0]);
+
+// Old Code
+ /*
   const liHp = document.createElement("li");
   liHp.innerText = currentPokemon.stats[0].stat.name.toUpperCase() + ": " + String(currentPokemon.stats[0].base_stat);
-  cardStatsUl.append(liHp);
+  cardStatsUl.append(p);
 
   const liAtt = document.createElement("li");
   liAtt.innerText = currentPokemon.stats[2].base_stat;
@@ -59,6 +108,3 @@ for (let i = 0; i < data.length; i++) {
   liSpeed.innerText = currentPokemon.stats[6].base_stat;
   cardStatsUl.append(liSpeed);
   */
-}
-
-console.log(data[0]);

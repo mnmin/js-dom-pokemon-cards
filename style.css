@@ -59,6 +59,7 @@ h2 {
 
   border-radius: 5px;
   list-style-type: none;
+  /*text-overflow: ellipsis; */
 }
 
 .card--img {
